@@ -5,6 +5,7 @@ read file
 echo ""
 read mot
 echo ""
+#si toute la chaine existe dans le fichier
 if  grep -q "$mot" "$file"; then
 echo "La chaîne '$mot' a été trouvée dans $file"
 else

@@ -1,7 +1,7 @@
 #!/bin/bash
-
+#lire le nombre 1, le nombre 2 puis l'operateur
 read nbre1 nbre2 op
-
+# instruction en fonction de l'operateur
 case "$op" in
     "+")
 

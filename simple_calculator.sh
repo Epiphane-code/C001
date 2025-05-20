@@ -1,17 +1,34 @@
 #!/bin/bash
-# C'est un script qui affiche l'utilisation du disque de façon lisible
 
-read a b op
+read nbre1 nbre2 op
 
-if [ "$op" = "+" ]; then
-    result=$((a + b))
-elif  [ "$op" = "-" ]; then 
-    result=$((a - b))
-elif  [ "$op" = "*" ]; then 
-    result=$((a * b))
-elif  [ "$op" = "/" ]; then 
-    result=$((a / b))   
-fi
-echo "Résultat : $result"
+case "$op" in
+    "+")
+
+        echo "Résultat : $((nbre1 + nbre2))"
+        ;;
+    "-")
+
+        echo "Résultat : $((nbre1 - nbre2))"
+        ;;
+    "*")
+
+        echo "Résultat : $((nbre1 * nbre2))"
+        ;;
+    "/")
+ 
+        if [ "$nbre2" -eq 0 ]; then
+
+            echo "Erreur : division par zéro interdite"
+        else
+
+            echo "Résultat : $((nbre1 / nbre2))"
+        fi
+        ;;
+    *)
+
+        echo "Opérateur invalide. Utilisez +, -, * ou /"
+        ;;
+esac
 
 exit 0

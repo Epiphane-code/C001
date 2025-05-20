@@ -1,13 +1,17 @@
 #!/bin/bash
+#lire le nom du dossier
 read myfolder
 
-nbreItem=$(ls "$myfolder" | wc -l)
+#recuperer le nombre des fichier dans $myfolder
+nbre=$(ls "$myfolder" | wc -l)
 
-if [ "$nbreItem" -gt 0 ]; then
+#si le nombre n'est pas null, afficher
+if [ "$nbre" -gt 0 ]; then
 
-    echo "Le dossier $myfolder contient $nbreItem fichier(s)."
+    echo "Le dossier $myfolder contient $nbre fichier(s)."
+#sinon afficher zero
 else
-
+     
     echo "Le dossier $myfolder contient 0 fichier(s)."
 fi
 exit 0

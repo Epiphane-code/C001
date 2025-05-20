@@ -1,21 +1,16 @@
 #!/bin/bash
-# Lire le fichier avec read
-read -p "" filename
-nombre=0
+read myfolder
 
-if [ -d $filename ]; then
+nbreItem=$(ls "$myfolder" | wc -l)
 
-for file in "$filename"/*; do
-if [ -f $file ]; then
+if [ "$nbreItem" -gt 0 ]; then
 
-nombre=$((nombre + 1))
-fi
-done
-
-echo "Le dossier $filename contient $nombre fichier(s)."
+    echo "Le dossier $myfolder contient $nbreItem fichier(s)."
 else
-echo "Le dossier $filename n'existe pas."
+
+    echo "Le dossier $myfolder contient 0 fichier(s)."
 fi
+exit 0
 
 
 
